@@ -1,0 +1,165 @@
+/* ugly css ahead, be warned, IT JUST WORKS -toddhoward */
+
+.averagebank-modal-base-background {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    display: flex;
+    background-color: #cacaca65;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.averagebank-modal-base-container {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: white;
+    border-radius: 25px;
+    font-size: 20px;
+}
+
+.status-changed{
+	background-color: rgb(255, 255, 255);
+}
+
+.averagebank-modal-base-text {
+    /* background-color: red; */
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+    color: var(--Primary-Color);
+}
+
+.averagebank-modal-base-close {
+    align-self: flex-end;
+    margin-right: 15px;
+    margin-top: 15px;
+    
+    width: 35px;
+    height: 35px;
+    border-radius: 30px;
+    text-align: center;
+    background-color: var(--Primary-Color);
+    font-weight: bold;
+    font-size: 20px;
+    border: 0;
+    color: var(--Primary-Color-Text-Plain);
+    transition: all 0.25s ease-in-out;
+}
+
+.averagebank-modal-warning {
+    /* background-color: rgb(63, 157, 240); */
+    color: red;
+    text-align: center;
+}
+
+.averagebank-modal-base-form {
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    gap: 35px;
+}
+
+input {
+    border: none;
+    border-bottom: 2px rgb(163, 163, 163) solid;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+    outline: none;
+    transition: font-weight 0.25s ease-in-out;
+    background-color: transparent;
+}
+
+input:hover {
+  font-weight: 600;
+}
+
+.averagebank-modal-base-submit {
+    border: none; 
+    margin-top: 25px;
+    border-radius: 50px;
+    background-color: var(--Primary-Color);
+    color: var(--Primary-Color-Text-Plain);
+    font-weight: 600;
+    padding-top: 7.5px;
+    padding-bottom: 7.5px;
+    transition: color 0.25s ease-in-out;
+}
+
+.averagebank-modal-switch-mode {
+    color: var(--Primary-Color);
+    border: 0px;
+    border-bottom: dashed var(--Primary-Color) 1px;
+    background-color: transparent;
+    padding: 0px 3px 0px 3px;
+}
+
+.averagebank-modal-base-bottext {
+    text-align: center;
+    margin-top:20px;
+    font-weight: 500;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.averagebank-modal-base-submit:hover, 
+.averagebank-modal-base-close:hover {
+    color: var(--Primary-Color-Text-Hover);
+}
+
+.averagebank-modal-switch-mode:hover{
+    border-bottom: solid 1px;
+}
+
+.averagebank-modal-base-container-success-signup {
+	display: flex;
+	flex-direction: column;
+}
+
+.averagebank-modal-base-container-success-signup p {
+	display: flex;
+	/* background-color: blue; */
+	margin: 0;
+	padding: 15px;
+	align-self: center;
+
+	color: var(--Primary-Color);
+}
+
+.animate-fade-out {
+  animation: fade-out-anim 0.25s;
+}
+
+.animate-fade-in {
+  animation: fade-in-anim 0.25s;
+}
+
+@keyframes fade-out-anim {
+  from {
+    opacity: 1;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in-anim {
+  from {
+    opacity: 0;
+    transform: translateY(-25px);
+  }
+  to {
+    opacity: 1;
+  }
+}

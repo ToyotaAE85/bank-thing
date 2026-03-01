@@ -1,0 +1,135 @@
+    /* TODO: remove comments */
+
+    .averagebank-contact-route-container {
+        min-height: 85vh;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        /* background-color: red; */
+    }
+
+    .averagebank-contact-route-container-main{
+        /* background-color: red; */
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        padding: 15px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .averagebank-contact-route-container-main-labels {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .averagebank-contact-route-container-form-container {
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        border-radius: 20px;
+        font-size: 16px;
+        padding: 25px;
+    }
+
+    .averagebank-contact-router-form-container-first-section, 
+    .averagebank-contact-router-form-container-second-section,
+    .averagebank-contact-router-form-container-third-section {
+        /* background-color: blue; */
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+    }
+
+    .averagebank-contact-route-first-section-reason,
+    .averagebank-contact-route-first-section-name,
+    .averagebank-contact-route-second-section-email,
+    .averagebank-contact-route-second-section-phone,
+    .averagebank-contact-route-third-section-message
+    {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .averagebank-contact-route-second-section-phone-data {
+        display: flex;
+    }
+
+    .averagebank-contact-route-third-section-message {
+        min-height: 150px;
+    }
+
+    span {
+        color: red;
+        font-size: 10px;
+        font-style: italic;
+        position: relative;
+        top: -15%;
+    }
+
+    label {
+        font-style: italic;
+    }
+
+    input, select, textarea {
+        background-color: rgb(242, 242, 242);
+        border: 0px;
+        padding: 5px;
+        outline: none;
+        transition: background-color 0.25s ease-in-out;
+    }
+
+    input:hover, select:hover, textarea:hover {
+        background-color: rgb(224, 224, 224);
+    }
+
+    h1 {
+        text-align: center;
+        font-weight: 300;
+    }
+
+    .averagebank-contact-route-container-form-container-footer {
+        text-align: center;
+        font-size: 13px;
+        padding: 0;
+        transition: color 0.15s ease-in-out;
+    }
+
+    .submitted {
+        color: red;
+    }
+
+    button {
+        background-color: var(--Primary-Color);
+        color: var(--Primary-Color-Text-Plain);
+        transition: all 0.25s ease-in-out;
+        width: 25%;
+        padding: 5px;
+        border: 0;
+        border-radius: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        font-weight: bold;
+    }
+
+    button:hover {
+        color: var(--Primary-Color-Text-Hover);
+    }
+
+    .averagebank-contact-route-first-section-phone-prefix-input {
+        text-align: right;
+        background-color: rgb(231, 231, 231);
+        font-size: 15px;
+    }
+
+    .averagebank-contact-route-third-section-message-body {
+        flex: 1;
+        resize: none;
+    }

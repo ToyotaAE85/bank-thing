@@ -1,0 +1,13 @@
+/* too much DRY, wonder if SCSS could fix this. */
+.animate-fade-in {
+  animation: fade-in-anim 0.25s;
+}
+
+@keyframes fade-in-anim {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

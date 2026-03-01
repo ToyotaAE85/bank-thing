@@ -1,0 +1,325 @@
+/* intense voodoo below... funfact: i got so confused while doing this mess btw because I ommited comments */
+
+p {
+	margin: 0px;
+}
+
+.averagebank-home-route-loggedin-container {
+	/* background-color: red; */
+	height: 85vh;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.averagebank-home-route-loggedin-container-main {
+	background-color: rgb(243, 243, 243);
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+	border-radius: 30px;
+	overflow-y: auto;
+	min-width: 825px;
+	max-height: 600px;
+	position: relative;
+}
+
+.averagebank-home-route-loggedin-container-main-modal {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(255, 255, 255, 0.635);
+	z-index: 100;
+	display: flex;
+	align-items: center;
+
+}
+
+.success-label {
+	text-align: center;
+	flex: 1;
+	font-size: 40px;
+	font-style: italic;
+	color: var(--Primary-Color);
+	font-weight: 500;
+}
+
+.averagebank-home-route-loggedin-container-main-data {
+	/* background-color: gray; */
+	padding: 10px 0 5px 0;
+	display: flex;
+	gap: 10px;
+	border-bottom: 1px solid gray;
+}
+
+
+.averagebank-home-route-loggedin-container-main-data-userbalance,
+.averagebank-home-route-loggedin-container-main-data-username,
+.averagebank-home-route-loggedin-container-main-data-sessionlimit {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	/* background-color: red; */
+	gap: 5px;
+	flex: 1;
+}
+
+.decoration-label {
+	font-style: italic;
+	font-size: 15px;
+}
+
+.userbalance-label,
+.username-label,
+.timer-label {
+	font-weight: 500;
+	font-size: 20px;
+}
+
+.averagebank-home-route-loggedin-container-main-contents-switch {
+	/* background-color: red; */
+	display: flex;
+	gap: 10px;
+	flex-direction: row;
+	align-self: center;
+}
+
+.switch-user-method-button {
+	background-color: transparent;
+	font-weight: 300;
+	font-size: 20px;
+	transition: background-color 0.25s ease-in-out, font-weight 0.25s ease-in-out;
+	padding: 5px;
+	border: 0;
+	min-width: 150px;
+	border-radius: 25px;
+}
+
+.switch-user-method-button:hover {
+	font-weight: 500;
+}
+
+.selected {
+	background-color: var(--Primary-Color);
+	color: var(--Primary-Color-Text-Plain);
+}
+
+.selected:hover {
+	color: var(--Primary-Color-Text-Hover);
+}
+
+.averagebank-home-route-loggedin-container-main-contents {
+	/* background-color: orchid; */
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.averagebank-home-route-loggedin-container-main-contents-datatab {
+	/* background-color: aqua; */
+	overflow-y: auto;
+	padding: 10px 0px 10px 0px;
+	min-height: 375px;
+	max-height: 375px;
+	padding: 0px 10px 0px 10px;
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+}
+
+.datatab-warning-label {
+	color: red;
+	font-weight: 500;
+	translate: opacity 0.25s ease-in-out;
+	text-align: center;
+	/* background-color: black; */
+	padding: 3px 0 3px 0;
+}
+
+.averagebank-home-route-loggedin-container-main-contents-datatab-method-template {
+	/* background-color: red; */
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	justify-content: center;
+}
+
+.averagebank-home-route-loggedin-container-main-contents-datatab-method-template-controls {
+	background-color: rgb(226, 226, 226);
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	padding: 15px;
+	gap: 20px;
+}
+
+.averagebank-home-route-loggedin-container-main-contents-datatab-method-template-controls-amount,
+.averagebank-home-route-loggedin-container-main-contents-datatab-method-template-controls-message,
+.averagebank-home-route-loggedin-container-main-contents-datatab-method-template-controls-type,
+.averagebank-home-route-loggedin-container-main-contents-datatab-method-template-controls-destination-to {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+
+.averagebank-home-route-loggedin-container-main-contents-datatab-method-template-controls-type {
+	align-self: center;
+	justify-self: center;
+}
+
+.averagebank-home-route-loggedin-container-main-contents-datatab-method-template-controls-destination-to {
+	flex: 1;
+}
+
+.averagebank-home-route-loggedin-container-main-contents-datatab-method-template-controls-destination {
+	display: flex;
+	gap: 20px;
+}
+
+.deposit-controls-decoration {
+	font-size: 15px;
+	font-style: italic;
+}
+
+.deposit-controls-input {
+	font-weight: 500;
+	font-size: 17px;
+	outline: none;
+	background-color: rgb(242, 242, 242);
+	border: 0;
+	padding-left: 3px;
+	margin-left: 3px;
+	transition: background-color 0.25s ease-in-out;
+}
+
+.deposit-controls-input:hover {
+	background-color: rgb(207, 207, 207);
+}
+
+.fixed-method-template-input {
+	font-weight: 500;
+	font-size: 17px;
+	padding-left: 3px;
+}
+
+.deposit-additional-label {
+	color: red;
+	font-size: 10px;
+	font-style: italic;
+	position: relative;
+	top: -15%;
+}
+
+.averagebank-home-route-loggedin-container-main-contents-datatab-transaction {
+	/* background-color: red; */
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	flex: 1;
+}
+
+.transaction-template-container {
+	background-color: rgb(226, 226, 226);
+	display: flex;
+	gap: 5px;
+}
+
+.transaction-template-container-quantity,
+.transaction-template-container-from,
+.transaction-template-container-to,
+.transaction-template-container-message,
+.transaction-template-container-type {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	max-width: 150px;
+	max-height: 70px;
+	min-width: 150px;
+	overflow: auto;
+	padding: 3px;
+}
+
+.transaction-template-container-message {
+	flex: 1;
+	max-width: 400px;
+	max-height: 70px;
+}
+
+.transaction-template-container-type {
+	max-width: 100px;
+	min-width: auto;
+}
+
+.transaction-template-container-decoration {
+	font-size: 13px;
+	font-style: italic;
+}
+
+.transaction-template-container-decoration-label {
+	font-weight: 500;
+	padding-left: 5px;
+}
+
+.averagebank-home-route-loggedin-container-main-submit {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	padding: 10px;
+	/* background-color: red; */
+	align-items: center;
+	justify-items: center;
+	border-top: 1px solid gray;
+	min-height: 60px;
+}
+
+.submit-user-method-button {
+	border: 0;
+	background-color: var(--Primary-Color);
+	color: var(--Primary-Color-Text-Plain);
+	font-size: 17px;
+	padding: 5px 15px 5px 15px;
+	transition: color 0.25s ease-in-out;
+	font-weight: 500;
+	border-radius: 25px;
+}
+
+.submit-user-method-button:hover {
+	color: var(--Primary-Color-Text-Hover)
+}
+
+
+.averagebank-home-route-loggedin-container-main-contents-datatab-transaction-error {
+	font-size: 25px;
+	text-align: center;
+	color: var(--Primary-Color);
+	font-weight: 500;
+}
+
+.animate-fade-out {
+	animation: fade-out-anim 0.25s;
+}
+
+.animate-fade-in {
+	animation: fade-in-anim 0.25s;
+}
+
+@keyframes fade-out-anim {
+	from {
+		opacity: 1;
+	}
+
+	to {
+		opacity: 0;
+	}
+}
+
+@keyframes fade-in-anim {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}

@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+
+.averagebank-header {
+    /* background-color: beige; */
+    display: flex;
+    padding: 10px 10px;
+    border-bottom: var(--Background-Color) 2px solid;
+}
+
+.averagebank-header-logo {
+    /* background-color: aqua; */
+    font-size: 33px;
+    font-weight: 600;
+    color:  var(--Primary-Color);
+    align-items: center;
+    font-family: "Josefin Sans", sans-serif;
+}
+
+
+.averagebank-header-nav-container{
+    /* background-color: blue; */
+    flex: 1;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+/* .averagebank-top-nav {
+    background-color: red;
+} */
+
+
+.averagebank-header-nav-container-bottom-nav {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+a, button {
+    font-size: 16px;
+    text-decoration: none;
+    padding: 5px 20px;
+    color: var(--Secondary-Color-Text-Plain);
+    background-color: var(--Background-Color);
+    margin-left: 20px;
+    border-radius: 50px;
+    transition: all 0.2s ease-in-out;
+    border: 0px;
+}
+
+.route-active-link {
+    background-color:  var(--Primary-Color);
+    color: var(--Primary-Color-Text-Plain);
+}
+
+a:hover, button:hover {
+    color: var(--Secondary-Color-Text-Hover);
+}
+
+
+.averagebank-header-logout-button, .averagebank-header-signup-button {
+    background-color: var(--Primary-Color);
+    color: var(--Primary-Color-Text-Plain);
+    font-weight: 500;
+}
+
+.averagebank-header-logout-button:hover, 
+.averagebank-header-signup-button:hover, 
+.route-active-link:hover {
+    color: var(--Primary-Color-Text-Hover);
+}
+
+
+.animate-fade-out {
+  animation: fade-out-anim 0.25s;
+}
+
+.animate-fade-in {
+  animation: fade-in-anim 0.25s;
+}
+
+@keyframes fade-out-anim {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in-anim {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+:root {
+    --Background-Color: #f1f1f1;
+
+    --Primary-Color: #6E6EC2;
+
+    --Primary-Color-Text-Plain: #FFFFFF;
+    --Primary-Color-Text-Hover: #1E1E2F;
+    
+    --Secondary-Color-Text-Plain: #1E1E2F; 
+    --Secondary-Color-Text-Hover: #6C757D;
+}
+
+// you know I've never really paid that much attention to scss..
+// though it seems like a fantastic thing, maybe i'll use it later?

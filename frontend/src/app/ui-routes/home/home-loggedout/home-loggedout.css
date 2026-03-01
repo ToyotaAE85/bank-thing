@@ -1,0 +1,68 @@
+
+.averagebank-home-route-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    color: var(--Primary-Color-Text-Plain);
+    /* background-color: blue; */
+    min-height: 85vh;
+}   
+
+.averagebank-home-route-container-why-us-container {
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.averagebank-home-route-container-intro {
+    padding-bottom: 200px;
+}
+
+.averagebank-home-route-container-intro-welcome {
+    font-weight: bold;
+    font-size: 45px;
+}
+
+.averagebank-home-route-container-intro-addition {
+    font-style: italic;
+}
+
+.averagebank-home-route-container-why-us-container-options {
+    /* background-color: blue; */
+    display: flex;
+    gap: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 85%;
+}
+
+.averagebank-home-route-why-us-container-reason{
+    padding-bottom: 50px;
+}
+
+
+.why-us-options-reason-title {
+    text-align: center;
+    font-size: 25px;
+    font-style: italic;
+    font-weight: 500;
+}
+
+.why-us-options-reason-text {
+    text-align: justify;
+}
+
+h3 {
+    font-weight: bold;
+}
+
+.averagebank-home-route-container-why-us-container-options-first,
+.averagebank-home-route-container-why-us-container-options-second,
+.averagebank-home-route-container-why-us-container-options-third {
+    flex: 1;
+    border-radius: 30px;
+    padding: 10px;
+}

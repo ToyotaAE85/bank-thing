@@ -1,0 +1,148 @@
+<!-- even more verbose names ahead, god help us all-->
+
+<div class="averagebank-home-route-loggedin-container">
+    <div class="averagebank-home-route-loggedin-container-main">
+        
+		@if (requestSuccess()){
+			<div class="averagebank-home-route-loggedin-container-main-modal" animate.enter="animate-fade-in" animate.leave="animate-fade-out">
+				<p class="success-label">{{currentWindow() | titlecase}} Success!</p>
+			</div>
+		}
+
+		<div class="averagebank-home-route-loggedin-container-main-data">   <!-- RETRIEVE THIS DATA FROM BACKEND -->
+
+			<div class="averagebank-home-route-loggedin-container-main-data-userbalance">
+				<p class="decoration-label">User balance:</p>
+				<p class="userbalance-label">{{htmlBalanceData() | currency}}</p>
+			</div>
+			<div class="averagebank-home-route-loggedin-container-main-data-username">
+				<p class="decoration-label">Welcome back</p>
+				<p class="username-label">{{htmlUsername()}}</p>
+			</div>
+			<div class="averagebank-home-route-loggedin-container-main-data-sessionlimit">
+				<p class="decoration-label">Session timer:</p>
+				<p class="timer-label">{{sessionTimer()}}</p>
+			</div>
+
+		</div>
+
+		<div class="averagebank-home-route-loggedin-container-main-contents-switch">
+			<button class="switch-user-method-button" [class.selected]="requestCurrentWindow('transfer')" (click)="changeWindow('transfer')">Transfer</button>
+			<button class="switch-user-method-button" [class.selected]="requestCurrentWindow('deposit')" (click)="changeWindow('deposit')">Deposit</button>
+			<button class="switch-user-method-button" [class.selected]="requestCurrentWindow('transactions')" (click)="changeWindow('transactions')">Transactions</button>
+		</div>
+		
+		<form class="averagebank-home-route-loggedin-container-main-contents" (submit)="onSubmit($event)">
+					
+			<div class="averagebank-home-route-loggedin-container-main-contents-datatab">
+
+				@if (htmlError() !== ''){
+					<p class="datatab-warning-label" animate.enter="animate-fade-in">{{htmlError()}}</p>
+				}
+				
+				@if (requestCurrentWindow('transfer')) {
+
+					<div class="averagebank-home-route-loggedin-container-main-contents-datatab-method-template" animate.enter="animate-fade-in">
+						<div class="averagebank-home-route-loggedin-container-main-contents-datatab-method-template-controls">
+							
+							<div class="averagebank-home-route-loggedin-container-main-contents-datatab-method-template-controls-type">
+								<label class="deposit-controls-decoration">Type:</label>
+								<p class="fixed-method-template-input">Transfer</p>
+							</div>
+
+							<div class="averagebank-home-route-loggedin-container-main-contents-datatab-method-template-controls-destination">
+								<div class="averagebank-home-route-loggedin-container-main-contents-datatab-method-template-controls-destination-from">
+									<label class="deposit-controls-decoration">From:</label>
+									<p class="fixed-method-template-input">{{htmlUsername()}}</p>
+								</div>
+
+								<div class="averagebank-home-route-loggedin-container-main-contents-datatab-method-template-controls-destination-to">
+									<label for="deposit-to" class="deposit-controls-decoration" >To: <span class="deposit-additional-label">*</span></label>
+								<input id="deposit-to" class="deposit-controls-input" placeholder="To..." [formField]="userForm.destination">
+								</div>
+							</div>
+
+							<div class="averagebank-home-route-loggedin-container-main-contents-datatab-method-template-controls-amount">
+								<label for="deposit-amount" class="deposit-controls-decoration">Amount to deposit: <span class="deposit-additional-label">*</span></label>
+								<input type="number" id="deposit-amount" class="deposit-controls-input" placeholder="$" [formField]="userForm.amount">
+							</div>
+
+							<div class="averagebank-home-route-loggedin-container-main-contents-datatab-method-template-controls-message">
+								<label for="deposit-message" class="deposit-controls-decoration" >Message: <span class="deposit-additional-label">(Optional)</span></label>
+								<input id="deposit-message" class="deposit-controls-input" placeholder="Message..." [formField]="userForm.message">
+							</div>
+
+						</div>
+					</div>
+
+				} @else if (requestCurrentWindow('deposit')) {
+
+					<div class="averagebank-home-route-loggedin-container-main-contents-datatab-method-template" animate.enter="animate-fade-in">
+						<div class="averagebank-home-route-loggedin-container-main-contents-datatab-method-template-controls">
+							
+							<div class="averagebank-home-route-loggedin-container-main-contents-datatab-method-template-controls-type">
+								<label class="deposit-controls-decoration">Type:</label>
+								<p class="fixed-method-template-input">Deposit</p>
+							</div>
+
+							<div class="averagebank-home-route-loggedin-container-main-contents-datatab-method-template-controls-amount">
+								<label for="deposit-amount" class="deposit-controls-decoration">Amount to deposit: <span class="deposit-additional-label">*</span></label>
+								<input type="number" id="deposit-amount" class="deposit-controls-input" placeholder="$" [formField]="userForm.amount">
+							</div>
+
+							<div class="averagebank-home-route-loggedin-container-main-contents-datatab-method-template-controls-message">
+								<label for="deposit-message" class="deposit-controls-decoration" >Message: <span class="deposit-additional-label">(Optional)</span></label>
+								<input id="deposit-message" class="deposit-controls-input" placeholder="Message..." [formField]="userForm.message">
+							</div>
+
+						</div>
+					</div>
+
+				} @else if (requestCurrentWindow('transactions')) {
+
+					<div class="averagebank-home-route-loggedin-container-main-contents-datatab-transaction" animate.enter="animate-fade-in">
+						
+						@for( trn of htmlTransactions(); track trn ){
+							<div class="transaction-template-container"> <!-- MUST BE TAKEN AS A TEMPLATE... -->
+								<div class="transaction-template-container-from">
+									<p class="transaction-template-container-decoration">From:</p>
+									<p class="transaction-template-container-decoration-label">{{trn.from}}</p> <!-- fill data here -->
+								</div>
+								<div class="transaction-template-container-to">
+									<p class="transaction-template-container-decoration">To:</p>
+									<p class="transaction-template-container-decoration-label">{{trn.to}}</p> 
+								</div>
+								<div class="transaction-template-container-quantity">
+									<p class="transaction-template-container-decoration">Quantity:</p>
+									<p class="transaction-template-container-decoration-label">
+										{{trn.amount | currency: 'USD':'symbol':'1.0-2'}}
+									</p>
+								</div>
+								<div class="transaction-template-container-message">
+									<p class="transaction-template-container-decoration">Message:</p>
+									<p class="transaction-template-container-decoration-label">{{trn.message}}</p>
+								</div>
+								<div class="transaction-template-container-type">
+									<p class="transaction-template-container-decoration">Type:</p>
+									<p class="transaction-template-container-decoration-label">{{trn.type}}</p>
+								</div>
+							</div> <!-- dont delete this unless i am done with the spawn fucntion thing-->         
+						} @empty {
+							<p class="averagebank-home-route-loggedin-container-main-contents-datatab-transaction-error">You currently don't have any transactions.</p>
+						}     
+						
+					</div> <!-- DONT TOUCH THIS FUTURE ME, GO AWAY -->
+
+				}
+
+			</div>
+			
+			<div class="averagebank-home-route-loggedin-container-main-submit">
+				@if (!requestCurrentWindow('transactions')) {
+					<button class="submit-user-method-button" animate.enter="animate-fade-in" animate.leave="animate-fade-out">Submit</button>
+				}
+			</div>
+		</form>
+		
+    </div>
+</div>

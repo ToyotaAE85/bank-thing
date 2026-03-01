@@ -1,0 +1,64 @@
+<!-- some utterly verbose names ahead, might make you as insane as it made me. -->
+
+<div class="averagebank-contact-route-container">
+    <div class="averagebank-contact-route-container-main">
+        <div class="averagebank-contact-route-container-main-labels">
+            <h1 class="averagebank-contact-route-container-main-labels-intro">Need to tell us something?</h1>
+            <p class="averagebank-contact-route-container-main-labels-addition">Do fill this form if that's the case!</p>
+        </div>
+        <form class="averagebank-contact-route-container-form-container" (submit)="onSubmit($event)">
+            <h1>Contact Form</h1>
+            <div class="averagebank-contact-router-form-container-first-section">
+
+                <div class="averagebank-contact-route-first-section-reason">
+                    <label for="choices">Inquiry Type: <span>*</span></label>
+                    <select class="averagebank-contact-route-first-section-reason-input" name="choices" id="choices" required>
+                        <option value="" selected disabled hidden>Inquiry Type...</option>
+                        <option value="first-inquiry">General Question</option>
+                        <option value="second-inquiry">Technical Support</option>
+                        <option value="third-inquiry">Billing Issue</option>
+                        <option value="fourth-inquiry">Feedback / Suggestions</option>
+                    </select>
+                </div>
+
+                <div class="averagebank-contact-route-first-section-name">
+                    <label for="fullname">Name: <span>*</span></label>
+                    <input class="averagebank-contact-route-first-section-name-input" name="fullname" id="fullname" type="text" required placeholder="Name">
+                </div>
+
+            </div>
+
+            <div class="averagebank-contact-router-form-container-second-section">
+                <div class="averagebank-contact-route-second-section-email">
+                    <label for="email">Email: <span>*</span></label>
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+                </div>
+
+                <div class="averagebank-contact-route-second-section-phone">
+                    
+                    <label for="phone">Phone: <span>(Optional)</span></label>
+                    <div class="averagebank-contact-route-second-section-phone-data">
+                        <select class="averagebank-contact-route-first-section-phone-prefix-input" name="prefix" id="prefix">
+                            <option value="first-prefix">+1</option>
+                            <option value="second-prefix">+52</option>
+                            <option value="third-prefix">+44</option>
+                        </select>
+                        <input type="tel" id="phone" name="phone" placeholder="Phone"> <!-- type tel????, validate on the end though, if ever implemented -->
+                    </div>
+
+                </div>
+
+            </div>
+                
+            <div class="averagebank-contact-router-form-container-third-section">
+                <div class="averagebank-contact-route-third-section-message">
+                    <label for="message">Message: <span>*</span></label>
+                    <textarea class="averagebank-contact-route-third-section-message-body" type="text" name="message" id="message" placeholder="Message..." required></textarea>
+                </div>
+            </div>
+            
+            <p class="averagebank-contact-route-container-form-container-footer" [class.submitted]="pressedSubmit()">This is for demonstration purposes only, we don't actually have an active contact form. xd</p>
+            <button>Submit</button> <!--THIS SHOULD NOT DO ANYTHING FUTURE ME, STOP OVERENGINEERING STUFF-->
+        </form>
+    </div>
+</div>

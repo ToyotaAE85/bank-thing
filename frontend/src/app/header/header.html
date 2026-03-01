@@ -1,0 +1,27 @@
+<div class="averagebank-header">
+    <div class="averagebank-header-logo">AverageBank</div>
+    <div class="averagebank-header-nav-container">
+        <div class="averagebank-header-nav-container-bottom-nav">
+            <a routerLink="/home" routerLinkActive="route-active-link">Home</a>
+            <a routerLink="/contact" routerLinkActive="route-active-link">Contact</a>
+        </div>
+        <div class="averagebank-header-nav-container-top-nav">
+
+            @if (logged.isLoggedIn()) {
+                <button animate.enter="animate-fade-in"class="averagebank-header-logout-button" (click)="logout()">Logout</button>
+            } @else {
+                <div animate.enter="animate-fade-in">
+                    <button (click)="modalData.setModalTypeTo('login'); modalData.setModalOpenTo(true)" class="averagebank-header-login-button">Login</button>
+                    <button (click)="modalData.setModalTypeTo('signup'); modalData.setModalOpenTo(true)" class="averagebank-header-signup-button">Sign up</button>
+                </div>
+            }
+
+        </div>
+    </div>
+</div>
+
+@if (modalData.isModalOpen()) {
+    <app-modal-login-base 
+        animate.enter="animate-fade-in" animate.leave="animate-fade-out">
+    </app-modal-login-base>
+}

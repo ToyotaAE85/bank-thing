@@ -1,0 +1,18 @@
+<!-- do touch this future me, maybe later. -->
+
+@if (logged.sessionExpired()){
+	<div class="averagebank-app-expired-session-modal" animate.enter="animate-fade-in" animate.leave="animate-fade-out">
+
+		<p>Due to security purposes,</p>
+		<p>your session has expired.</p>
+		<p>Thank you for your preferences!</p>
+	</div>
+}
+
+<app-header></app-header>
+
+<div class="averagebank-app-placeholder-background">
+    <router-outlet></router-outlet>
+</div>
+
+<app-footer></app-footer>

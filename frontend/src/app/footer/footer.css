@@ -1,0 +1,21 @@
+.averagebank-footer-container {
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--Primary-Color);
+    font-weight: bold;
+    font-style: italic;
+    font-size: 15px;
+    padding-top: 15px;
+    gap:5px;
+}
+
+/* .averagebank-footer-container-copyright {
+    background-color: red;
+} */
+
+.averagebank-footer-container-slogan {
+    /* background-color: blue; */
+    font-size: 12px;
+}

@@ -1,0 +1,54 @@
+.averagebank-app-expired-session-modal {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: rgba(255, 255, 255, 0.859);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	z-index: 101001;
+}
+
+p {
+	color: var(--Primary-Color);
+	font-size: 50px;
+	font-weight: 600;
+}
+
+
+.averagebank-app-placeholder-background {
+	min-height: 85vh;
+	background: linear-gradient(45deg,
+			var(--Primary-Color),
+			rgb(150, 150, 220));
+	flex: 1;
+}
+
+.animate-fade-out {
+  animation: fade-out-anim 0.25s;
+}
+
+.animate-fade-in {
+  animation: fade-in-anim 0.25s;
+}
+
+@keyframes fade-out-anim {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in-anim {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

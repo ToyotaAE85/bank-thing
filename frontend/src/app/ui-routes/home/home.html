@@ -1,0 +1,6 @@
+
+@if (!logged.isLoggedIn()) {
+    <app-home-loggedout animate.enter="animate-fade-in"></app-home-loggedout >
+} @else {
+    <app-home-loggedin animate.enter="animate-fade-in"></app-home-loggedin>
+}

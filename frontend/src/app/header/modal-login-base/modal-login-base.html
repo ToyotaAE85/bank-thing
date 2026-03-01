@@ -1,0 +1,70 @@
+<div class="averagebank-modal-base-background" tabindex="0" (keyup.escape)="modalData.setModalOpenTo(false)">
+
+	@if (modalData.modalTabType() === 'login') { <!-- Login -->
+
+	<div class="averagebank-modal-base-container" animate.enter="animate-fade-in" animate.leave="animate-fade-out"
+		[class.status-changed]="hasLoggedIn()">
+
+		@if (!hasLoggedIn()) {
+			<button (click)="modalData.setModalOpenTo(false)" class="averagebank-modal-base-close">x</button>
+			<p class="averagebank-modal-base-text">Login</p>
+
+			@if (errorReported() != ''){
+				<p class="averagebank-modal-warning" animate.enter="animate-fade-in" animate.leave="animate-fade-out">
+				{{errorReported()}}</p>
+			}
+
+			<form class="averagebank-modal-base-form" (submit)="submitForm($event, 'login')">
+				<input type="text" placeholder="Username" [formField]="loginForm.username">
+				<input type="password" placeholder="Password" [formField]="loginForm.password">
+				<input class="averagebank-modal-base-submit" type="submit" value="Login">
+			</form>
+
+			<p class="averagebank-modal-base-bottext">Don't have an account?
+				<button (click)="modalData.setModalTypeTo('signup'); resetFormData()" class="averagebank-modal-switch-mode">Sign up</button>
+			</p>
+
+		} @else {
+			<div class="averagebank-modal-base-container-success-signup" animate.enter="animate-fade-in">
+				<p>Login success!</p>
+			</div>
+		}
+
+	</div>
+
+	} @else if (modalData.modalTabType() === 'signup') { <!-- Signup -->
+
+	<div class="averagebank-modal-base-container" animate.enter="animate-fade-in" animate.leave="animate-fade-out"
+		[class.status-changed]="hasSignedUp()">
+
+		@if (!hasSignedUp()) {
+			<button (click)="modalData.setModalOpenTo(false)" class="averagebank-modal-base-close">x</button>
+
+			<p class="averagebank-modal-base-text">Sign up</p>
+
+			@if (errorReported() != ''){
+				<p class="averagebank-modal-warning" animate.enter="animate-fade-in" animate.leave="animate-fade-out">
+					{{errorReported()}}</p>
+			}
+
+
+			<form class="averagebank-modal-base-form" (submit)="submitForm($event, 'register')">
+				<input type="text" placeholder="New Username" [formField]="loginForm.username">
+				<input type="password" placeholder="Password" [formField]="loginForm.password">
+				<input class="averagebank-modal-base-submit" type="submit" value="Submit">
+			</form>
+
+			<p class="averagebank-modal-base-bottext">Already have an account?
+				<button (click)="modalData.setModalTypeTo('login'); resetFormData()" class="averagebank-modal-switch-mode">Login</button>
+			</p>
+
+		} @else {
+			<div class="averagebank-modal-base-container-success-signup" animate.enter="animate-fade-in">
+				<p>Sign up success!</p>
+				<p>You'll be redirected to the login tab shortly...</p>
+			</div>
+		}
+	</div>
+
+	}
+</div>
